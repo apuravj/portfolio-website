@@ -34,3 +34,9 @@ jobs:
           publish_dir: ./build
           publish_branch: gh-pages
           external_repository: apuravj/portfolio-website
+
+      - name: Push to GitHub Pages
+        run: |
+            git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/apurvaj/portfolio-website.git
+            git push origin gh-pages
+              
